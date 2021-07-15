@@ -12,6 +12,9 @@ const ehb = {
                 console.log("News", data);
                 data.forEach(function (news) {
                     const containerNews = document.getElementById('container');
+                    const info =`Hello`;
+
+                    containerNews.insertAdjacentElement('beforeend', info);
                 });
             });
     },
