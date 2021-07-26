@@ -1,23 +1,16 @@
 "use strict";
 
+import NewsEHB from "./api.js";
 const ehb = {
     init(){
+        const apiFunctie = new NewsEHB();
+        console.log('classe newsehb', apiFunctie);
 
+        const containerApi = document.getElementById('container');
+        containerApi.insertAdjacentHTML('beforeend', apiFunctie);
+        console.log('container van api', containerApi);
     },
 
-    render() {
-        fetch(`https://thecrew.cc/news/read.php`)
-            .then(response => response.json())
-            .then(data => {
-                console.log("News", data);
-                data.forEach(function (news) {
-                    const containerNews = document.getElementById('container');
-                    const info =`Hello`;
-
-                    containerNews.insertAdjacentElement('beforeend', info);
-                });
-            });
-    },
 };
 
 ehb.init();
