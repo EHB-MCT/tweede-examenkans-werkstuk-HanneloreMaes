@@ -3,7 +3,7 @@
 import NewsEHB from "./api.js";
 const ehb = {
     init(){
-        const apiFunctie = new NewsEHB();
+        const apiFunctie = new NewsEHB(NewsEHB.data.UUID,this.title);
         console.log('classe newsehb', apiFunctie.nieuws());
 
         const containerApi = document.getElementById('container');
