@@ -8,6 +8,7 @@ class NewsEHB {
         this._imageURL= image;
         this._likes= likes;
         this._datum= datum;
+        console.log("this",this);
     }
     
     get ID(){
@@ -37,9 +38,8 @@ class NewsEHB {
     nieuws(){
         fetch(`https://thecrew.cc/news/read.php`)
         .then(response => response.json())
-        .then(data => {console.log("News", data);
-    });
-}
+        .then(data => {console.log('succes', data);});
+    }
 }
 
 export default NewsEHB;
