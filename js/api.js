@@ -1,21 +1,21 @@
 "use strict";
 
 class NewsEHB {
-    constructor(ID, titel, content, image, likes, datum){
+    constructor(ID, title, content, image, likes, datum){
         this._id= ID;
-        this._title= titel;
+        this._title= title;
         this._content= content;
         this._imageURL= image;
         this._likes= likes;
         this._datum= datum;
-        console.log("this",this);
+        // console.log("this",this);
     }
     
     get ID(){
         return this._id;
     }
     
-    get titel(){
+    get title(){
         return this._title;
     }
     
@@ -35,11 +35,11 @@ class NewsEHB {
         return this._datum;
     }
     
-    nieuws(){
-        fetch(`https://thecrew.cc/news/read.php`)
-        .then(response => response.json())
-        .then(data => {console.log('succes', data);});
-    }
+    // nieuws(){
+    //     fetch(`https://thecrew.cc/news/read.php`)
+    //     .then(response => response.json())
+    //     .then(data => {console.log('succes', data);});
+    // }
 }
 
 export default NewsEHB;
