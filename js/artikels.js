@@ -1,5 +1,7 @@
 "use strict";
 
+import NewsEHB from "./api";
+
 class Artikels{
     constructor(){
 
@@ -7,8 +9,13 @@ class Artikels{
 
     like(){
         fetch(`https://thecrew.cc/news/create.php`, {
-            method: 'POST'
-        })
+            method: 'POST',
+            body: {
+                "UUID": [NewsEHB.UUID]
+            }
+            
+        });
+        console.log('test 1', fetch.body)
         .then(response => response.json())
         .then(data => {
             console.log("Succes", data);
@@ -18,3 +25,5 @@ class Artikels{
         });
     }
 }
+
+export default Artikels;
