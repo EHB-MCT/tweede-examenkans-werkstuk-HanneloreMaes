@@ -17,7 +17,22 @@ main {
   height:  100vh;
 }
 
+img{
+  width: 70%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
 .infoApi{
   margin-bottom: 10%;
 }
 
+.article__title{
+  font-size: 20pt;
+  font-style: italic;
+  margin-bottom: 5%;
+}
+
+.article__paragraph{
+  font-size: 14pt;
+}
