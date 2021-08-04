@@ -27,7 +27,8 @@ const ehb = {
                 	<h1 class="article__title">${classeAPI.title}</h1>
                     <img class="article_photo" src="${classeAPI.image}" alt="De foto van ${classeAPI.ID}">
                     <p class="article__paragraph">${classeAPI.content}</p>
-                    <span class="article_like">${classeAPI.likes}</span>`;
+                    <span class="article_like">${classeAPI.likes} <button class="article_likebutton">Like me!</button> </span>`;
+                    
                     
                     
                     //${classeAPI.ID} <br> ${classeAPI.title} <br>  ${classeAPI.content} <br> ${classeAPI.image} <br> ${classeAPI.likes} <br> ${classeAPI.datum} <br>`;
