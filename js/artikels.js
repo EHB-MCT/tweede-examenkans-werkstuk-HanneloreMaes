@@ -1,6 +1,6 @@
 "use strict";
 
-import NewsEHB from "./api";
+import NewsEHB from "./api.js";
 
 class Artikels{
     constructor(){
@@ -19,8 +19,9 @@ class Artikels{
         .then(response => response.json())
         .then(data => {
             console.log("Succes", data);
-            data.forEach(function (likes) {
-                const meegevenLike = `UUID van de post`;
+            data.forEach(likes => {
+                
+
             });
         });
     }
