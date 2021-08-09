@@ -1,6 +1,7 @@
 "use strict";
 
 import NewsEHB from "./api.js";
+import index from "./index.js";
 
 class Artikels{
     constructor(id, liken){
@@ -12,23 +13,17 @@ class Artikels{
         fetch(`https://thecrew.cc/news/create.php`, {
             method: 'POST',
             body: {
-                "UUID": this.id
+                "UUID": this._idLiken
             }
         })
         .then(data => {
             console.log("Succes3", data);
+            const buttonClasse = document.getElementsByName('button');
+            index.button2.classList.toggle('active');
+            if(buttonClasse == 'active'){
+                this._likesLiken += 1;
+            }
             
-            const imgClass = document.getElementById('none');
-            if( imgClass != 'active'){
-                imgClass.classList.remove('none');
-                imgClass.classList.add('active');
-                this.liken += 1;
-            }
-            else if (imgClass == 'active'){
-                imgClass.classList.remove('active');
-                imgClass.classList.add('none');
-                this.liken -= 1;
-            }
         });
     }
 }

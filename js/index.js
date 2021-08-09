@@ -31,7 +31,7 @@ const ehb = {
                 	<h1 class="article__title">${classeAPI.title}</h1>
                     <img class="article_photo" src="${classeAPI.image}" alt="De foto van ${classeAPI.ID}">
                     <p class="article__paragraph">${classeAPI.content}</p>
-                    <span class="article_like">${classeAPI.likes} <button id="none" class="article_likebutton_${classeAPI.ID} ">Like Me!</button></span>`;
+                    <span class="article_like">${classeAPI.likes} <button class="article_likebutton_${classeAPI.ID}">Like Me!</button></span>`;
 
                 newContainer.insertAdjacentHTML('beforeend', stringAPI);
                 containerApi.insertAdjacentElement('beforeEnd', newContainer);
