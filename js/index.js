@@ -31,37 +31,25 @@ const ehb = {
                 	<h1 class="article__title">${classeAPI.title}</h1>
                     <img class="article_photo" src="${classeAPI.image}" alt="De foto van ${classeAPI.ID}">
                     <p class="article__paragraph">${classeAPI.content}</p>
-                    <span class="article_like">${classeAPI.likes} <button class="article_likebutton">Like me!</button> </span>`;
+                    <span class="article_like">${classeAPI.likes} <button id="none" class="article_likebutton_${classeAPI.ID} ">Like Me!</button></span>`;
 
                 newContainer.insertAdjacentHTML('beforeend', stringAPI);
                 containerApi.insertAdjacentElement('beforeEnd', newContainer);
                 console.log('container van api', containerApi);
 
-                const button2 = document.getElementsByClassName('article_likebutton')[0];
+                const button2 = document.getElementsByClassName(`article_likebutton_${classeAPI.ID}`)[0];
                 button2.addEventListener("click", (e) => {       
                     e.preventDefault();
-                    // const artikel = new Artikels();
+                    const liken = new Artikels(classeAPI.ID, classeAPI.likes);
+                    liken.like();
+                    console.log('EventListener Artikel',button2);
                 });
-                console.log('EventListener Artikel',button2);
                     
             });
         });
     },
 
-    // like(e){
-    //     e.preventDefault();
-    //     fetch(`https://thecrew.cc/news/create.php`, {
-    //         method: 'POST',
-    //         body: {
-    //             "UUID": [NewsEHB.UUID]
-    //         }    
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log("Succes2", data);
-    //     });
-    // }
-
+    // <button class="article_likebutton ${classeAPI.ID}">Like me!</button>
     
 };
 

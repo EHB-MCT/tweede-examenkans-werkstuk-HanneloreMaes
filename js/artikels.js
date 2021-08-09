@@ -3,26 +3,32 @@
 import NewsEHB from "./api.js";
 
 class Artikels{
-    constructor(){
-
+    constructor(id, liken){
+        this._idLiken = id;
+        this._likesLiken = liken;
     }
 
     like(){
         fetch(`https://thecrew.cc/news/create.php`, {
             method: 'POST',
             body: {
-                "UUID": [NewsEHB.UUID]
+                "UUID": this.id
             }
-            
-        });
-        console.log('test 1', fetch.body)
-        .then(response => response.json())
+        })
         .then(data => {
-            console.log("Succes", data);
-            data.forEach(likes => {
-                
-
-            });
+            console.log("Succes3", data);
+            
+            const imgClass = document.getElementById('none');
+            if( imgClass != 'active'){
+                imgClass.classList.remove('none');
+                imgClass.classList.add('active');
+                this.liken += 1;
+            }
+            else if (imgClass == 'active'){
+                imgClass.classList.remove('active');
+                imgClass.classList.add('none');
+                this.liken -= 1;
+            }
         });
     }
 }

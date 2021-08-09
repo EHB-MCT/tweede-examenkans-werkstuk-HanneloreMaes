@@ -43,3 +43,7 @@ img{
 .article_like{
   font-size: 14pt;
 }
+
+.active{
+  background-color: #ff3d00;
+}
