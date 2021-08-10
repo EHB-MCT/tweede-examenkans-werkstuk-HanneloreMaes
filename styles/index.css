@@ -47,3 +47,8 @@ img{
 .active{
   background-color: #ff3d00;
 }
+
+#sortBtn{
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}

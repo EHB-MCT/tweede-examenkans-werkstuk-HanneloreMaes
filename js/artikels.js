@@ -28,13 +28,6 @@ class Artikels{
             const imgClass = document.getElementById(`article_likebutton_${this.id}`);
             console.log('help', imgClass);
             imgClass.classList.toggle('active');
-
-            // if( imgClass == 'active'){
-            //     this.liken += 1;
-            // }
-            // if (imgClass != 'active'){
-            //     this.liken -= 1;
-            // }
             
         });
     }
