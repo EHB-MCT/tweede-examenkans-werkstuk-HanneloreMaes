@@ -7,8 +7,8 @@ const ehb = {
     initFields(){
         this.nieuws();
 
-        // const filter = document.getElementById('sortBtn');
-        // filter.addEventListener('click', this.sortLikes());
+        const btnSort = document.getElementById('sortBtn');
+        btnSort.addEventListener('click', this.sortLikes());
     },
 
     nieuws(){
@@ -36,27 +36,36 @@ const ehb = {
                 containerApi.insertAdjacentElement('beforeEnd', newContainer);
                 console.log('container van api', containerApi);
 
-                // this.sortLikes(likeData);
+                const fun = classeAPI;
+                this.sortLikes(fun);
+                console.log('Data Likes', fun.likes);
+
                 const button2 = document.getElementById(`article_likebutton_${classeAPI.ID}`);
                 button2.addEventListener("click", (e) => {       
                     e.preventDefault();
                     const liken = new Artikels(classeAPI.ID, classeAPI.likes);
                     liken.like();
                     console.log('EventListener Artikel',button2);
-                });  
+                });
+                
             });
         });
     },
 
-    // sortLikes(likeData){
-    //     const likesData = likeData;
-    //     console.log('data likes', likesData);
+    sortLikes(fun){
+        console.log('Sort Likes', fun);
+        const fun2 = fun;
+        fun2.sort(function(a,b){
+            return a.likes - b.likes;
+        })
+        //console.log('Data', data.news);
 
-    //     likeData.sort(function(a,b){
-    //         return a.likesData - b.likesData;
-    //     });
-
-    // }
+        // fun.sort(function(a,b){
+        //     return a.likes - b.likes;
+            
+        // });
+        // console.log('fun2', fun.likes);
+    }
 
     
     
