@@ -57,6 +57,14 @@ const ehb = {
         let arrayLikes = [classeAPI];
         console.log("Niks",arrayLikes);     
 
+        for (let i = 0; i <10; i++){
+            arrayLikes.push(classeAPI);
+        }
+
+        let liken = arrayLikes.sort((a,b) => {
+                return a._likes - b._likes;
+        });
+        console.log('arr', liken);
     },
       
     
