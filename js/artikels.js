@@ -6,6 +6,8 @@ class Artikels{
     constructor(id, liken){
         this._idLiken = id;
         this._likesLiken = liken;
+
+        console.log('Aantal Likes', liken);
     }
 
     get id(){
@@ -14,6 +16,10 @@ class Artikels{
 
     get liken(){
         return this._likesLiken;
+    }
+
+    set liken(l){
+        this._likesLiken = l;
     }
 
     like(){
@@ -29,8 +35,22 @@ class Artikels{
             console.log('help', imgClass);
             imgClass.classList.toggle('active');
             
+            // let aantalLikes = this.liken;
+            // if(imgClass.classList == 'active'){
+            //     aantalLikes+= 1;
+            //     return aantalLikes;
+            // }
+            // console.log('Likes', aantalLikes);
+            
         });
     }
 }
 
 export default Artikels;
+
+
+// 1. Ophalen
+// 2. veranderen
+// 3. returnen/doorsturen
+// 4.ophalen
+// 5. toevoegen
