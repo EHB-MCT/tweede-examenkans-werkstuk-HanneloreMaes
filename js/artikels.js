@@ -32,16 +32,8 @@ class Artikels{
         .then(data => {
             console.log("Succes3", data);
             const imgClass = document.getElementById(`article_likebutton_${this.id}`);
-            console.log('help', imgClass);
             imgClass.classList.toggle('active');
-            
-            // let aantalLikes = this.liken;
-            // if(imgClass.classList == 'active'){
-            //     aantalLikes+= 1;
-            //     return aantalLikes;
-            // }
-            // console.log('Likes', aantalLikes);
-            
+            console.log('toggle active', imgClass);
         });
     }
 }
